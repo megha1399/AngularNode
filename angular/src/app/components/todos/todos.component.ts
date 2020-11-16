@@ -13,7 +13,7 @@ export class TodosComponent implements OnInit {
     todos = [];
     displayedColumns: string[] = ['id', 'title', 'category', 'product', 'action'];
 
-    constructor(private todoService: TodoService) { };
+    constructor(private todoService: TodoService) { }
 
     ngOnInit() {
         this.getTodos();
@@ -28,10 +28,10 @@ export class TodosComponent implements OnInit {
     }
 
     deleteTodo(id) {
-        console.log(id,'id');
+        console.log(id, 'id');
         this.todoService.deleteTodo(id)
         .subscribe ( response => {
-            console.log(response,'response');
+            console.log(response, 'response');
             this.getTodos();
             }
         );
