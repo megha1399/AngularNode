@@ -11,7 +11,7 @@ describe('TodoService', () => {
   let todoService: TodoService;
 
   describe('#getList()', () => {
-      beforeEach (async() => {
+      beforeEach (async () => {
         TestBed.configureTestingModule( {
           imports: [HttpClientTestingModule],
           providers: [TodoService]
@@ -47,7 +47,7 @@ describe('TodoService', () => {
   });
 
   describe('#deleteTodo', () => {
-    beforeEach (async() => {
+    beforeEach (async () => {
       TestBed.configureTestingModule( {
         imports: [HttpClientTestingModule],
         providers: [TodoService]
