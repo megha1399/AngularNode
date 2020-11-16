@@ -9,7 +9,6 @@ import { tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class TodoService {
-  
   baseUrl = `http://localhost:8001`;
 
   constructor(
@@ -19,8 +18,7 @@ export class TodoService {
   getList(): Observable<any> {
     return this.http.get<any>(this.baseUrl + '/getProducts')
     .pipe(
-      tap( 
-        data => {
+      tap(data => {
           return data;
         },
         error => this.handleError(error)
@@ -29,7 +27,7 @@ export class TodoService {
   }
 
   deleteTodo(id): Observable<any> {
-    let postUrl = '/deleteProduct/';
+    const postUrl = '/deleteProduct/';
     return this.http.delete<any>(this.baseUrl + postUrl + id)
     .pipe(
       tap( 
