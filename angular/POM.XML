@@ -20,9 +20,7 @@
                   <groupId>org.apache.maven.plugins</groupId>
                   <artifactId>maven-checkstyle-plugin</artifactId>
                   <version>2.9.1</version>
-                  <configuration>
-      <configLocation>file://${basedir}/lint_checkstyle.xml</configLocation>
-    </configuration>
+                  <consoleOutput>lint_checkstyle.xml</consoleOutput>
                 </plugin>
             </plugins>
         </pluginManagement>
