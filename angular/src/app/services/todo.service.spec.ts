@@ -11,16 +11,16 @@ describe('TodoService', () => {
   let todoService: TodoService;
 
   describe('#getList()', () => {
-      beforeEach(async() => {
+      beforeEach (async() => {
         TestBed.configureTestingModule({
           imports: [HttpClientTestingModule],
           providers: [TodoService]
         })
         .compileComponents();
 
-        httpClient = TestBed.get(HttpClient);
-        httpTestingController = TestBed.get(HttpTestingController);
-        todoService = TestBed.get(TodoService);
+        httpClient = TestBed.inject(HttpClient);
+        httpTestingController = TestBed.inject(HttpTestingController);
+        todoService = TestBed.inject(TodoService);
       });
 
       afterEach(() => {
@@ -31,8 +31,8 @@ describe('TodoService', () => {
         const expectedTodos =
         [
           {
-            'title': 'Mobile',
-            'id': 2
+            title: 'Mobile',
+            id: 2
           }
         ];
         todoService.getList().subscribe(
@@ -47,16 +47,16 @@ describe('TodoService', () => {
   });
 
   describe('#deleteTodo', () => {
-    beforeEach(async() => {
+    beforeEach (async() => {
       TestBed.configureTestingModule({
         imports: [HttpClientTestingModule],
         providers: [TodoService]
       })
       .compileComponents();
 
-      httpClient = TestBed.get(HttpClient);
-      httpTestingController = TestBed.get(HttpTestingController);
-      todoService = TestBed.get(TodoService);
+      httpClient = TestBed.inject(HttpClient);
+      httpTestingController = TestBed.inject(HttpTestingController);
+      todoService = TestBed.inject(TodoService);
     });
 
     afterEach(() => {
@@ -65,8 +65,8 @@ describe('TodoService', () => {
 
     it('should make DELETE request', () => {
       const expectedTodos = {
-          'title': 'mobile',
-          'id': 2,
+          title: 'mobile',
+          id: 2,
       };
       const deleteUrl = `${todoService.baseUrl}/${expectedTodos.id}`;
       todoService.deleteTodo(expectedTodos.id).subscribe();
