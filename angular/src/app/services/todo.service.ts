@@ -23,14 +23,14 @@ export class TodoService {
         },
         error => this.handleError(error)
       )
-    ); 
+    );
   }
 
   deleteTodo(id): Observable<any> {
     const postUrl = '/deleteProduct/';
     return this.http.delete<any>(this.baseUrl + postUrl + id)
     .pipe(
-      tap( 
+      tap(
         data => {
           return data;
         },
