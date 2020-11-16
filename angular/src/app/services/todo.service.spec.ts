@@ -12,7 +12,7 @@ describe('TodoService', () => {
 
   describe('#getList()', () => {
       beforeEach (async() => {
-        TestBed.configureTestingModule({
+        TestBed.configureTestingModule( {
           imports: [HttpClientTestingModule],
           providers: [TodoService]
         })
@@ -48,7 +48,7 @@ describe('TodoService', () => {
 
   describe('#deleteTodo', () => {
     beforeEach (async() => {
-      TestBed.configureTestingModule({
+      TestBed.configureTestingModule( {
         imports: [HttpClientTestingModule],
         providers: [TodoService]
       })
