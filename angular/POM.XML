@@ -1,5 +1,8 @@
 <properties>
         <maven.compiler.release>11</maven.compiler.release>
+        <groupId>com.mycompany.app</groupId>
+        <artifactId>my-app</artifactId>
+        <version>1</version>
     </properties>
  
     <build>
